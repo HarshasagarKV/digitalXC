@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import { FileUploadService } from 'src/app/services/file-upload.service';
@@ -9,7 +9,12 @@ import { FileUploadService } from 'src/app/services/file-upload.service';
   templateUrl: './secret-santa.component.html',
   styleUrls: ['./secret-santa.component.css']
 })
+
+
 export class SecretSantaComponent implements OnInit {
+
+  @ViewChild('employeesFileInput') employeesFileInput!: ElementRef;
+  @ViewChild('previousFileInput') previousFileInput!: ElementRef;
 
   constructor(private fileService:FileUploadService) { }
 
@@ -88,5 +93,8 @@ export class SecretSantaComponent implements OnInit {
     this.employees = [];
     this.previousAssignments = [];
     this.newAssignments = [];
+    // Reset the file input elements
+    this.employeesFileInput.nativeElement.value = '';
+    this.previousFileInput.nativeElement.value = '';
   }
 }

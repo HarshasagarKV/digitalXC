@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Assignment } from '../models/assignment.model';
+import { PreviousAssignment } from '../models/assignment.model';
 import { Employee } from '../models/employee.model';
 import * as XLSX from 'xlsx';
 
@@ -11,7 +11,7 @@ export class FileUploadService {
 
   constructor() { }
 
-  generateAssignments(employees:any, previousAssignments:any): Assignment[] {
+  generateAssignments(employees:any, previousAssignments:any): PreviousAssignment[] {
     if (!employees || employees.length < 2) {
       throw new Error('At least two employees are required for Secret Santa.');
     }

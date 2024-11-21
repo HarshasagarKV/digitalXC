@@ -1,5 +1,4 @@
 export interface Employee {
-    name: string;
-    Employee_EmailID: string; 
-  }
-  
+  Employee_Name: string;
+  Employee_EmailID: string;
+}

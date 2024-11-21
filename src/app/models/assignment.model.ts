@@ -1,7 +1,6 @@
 import { Employee } from "./employee.model";
 
-export interface Assignment {
-    employee: Employee;
-    secretChild: Employee;
-  }
-  
+export interface PreviousAssignment extends Employee {
+  Secret_Child_Name: string;
+  Secret_Child_EmailID: string;
+}
